@@ -8,9 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring-hystrix-school-service" />
         <module name="springbootdemo" />
+        <module name="com-self-sprintboot-learning-eureka" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="com-self-sprintboot-learning-eureka" target="1.8" />
       <module name="spring-hystrix-school-service" target="1.8" />
       <module name="springbootdemo" target="1.8" />
     </bytecodeTargetLevel>
