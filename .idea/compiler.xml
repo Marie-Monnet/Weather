@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="spring-hystrix-school-service" />
         <module name="springbootdemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="spring-hystrix-school-service" target="1.8" />
       <module name="springbootdemo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
