@@ -32,17 +32,20 @@ public class WeatherController {
             @ApiResponse(code = 403, message = "forbidden!!!"),
             @ApiResponse(code = 404, message = "not found!!!") })
 
+    //Get all weathers in all cities
     @RequestMapping(value = "/getWeathers")
     public List<weather> getWeathers() {
         return weathers;
     }
 
+    //Get weather in a specific city
     @ApiOperation(value = "Get specific city in the System ", response = weather.class, tags = "getWeather")
     @RequestMapping(value = "/getWeather/{cityName}")
     public weather getWeather(@PathVariable(value = "cityName") String cityName) {
         return weathers.stream().filter(x -> x.getCityName().equalsIgnoreCase(cityName)).collect(Collectors.toList()).get(0);
     }
 
+    //Get weather in a specific country
     @ApiOperation(value = "Get specific city By Country in the System ", response = weather.class, tags = "getCityByCountry")
     @RequestMapping(value = "/getCityByCountry/{country}")
     public List<weather> getCityByCountry(@PathVariable(value = "country") String country) {
@@ -53,6 +56,7 @@ public class WeatherController {
         return CityByCountry;
     }
 
+    //Get weather with a specific zip code
     @ApiOperation(value = "Get specific city By Zipcode in the System ",response = weather.class,tags="getCityByZip")
     @RequestMapping(value = "/getCityByZip/{zipCode}")
     public List<weather> getWeatherByZip(@PathVariable(value = "zipCode") Integer zipCode) {

@@ -1,5 +1,7 @@
 package com.howtodoinjava.demo.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class weather {
 
 	public weather() {
@@ -13,9 +15,13 @@ public class weather {
 		this.temperature = temperature;
 	}
 
+	@ApiModelProperty(notes = "Name of the City",name="cityName",required=true,value="test city name")
 	private String cityName;
+	@ApiModelProperty(notes = "Value of the Zip Code",name="zipCode",required=true,value="test zip code")
 	private Integer zipCode;
+	@ApiModelProperty(notes = "Name of the Country",name="country",required=true,value="test country")
 	private String country;
+	@ApiModelProperty(notes = "Value of the temperature",name="temperature",required=true,value="test temperature")
 	private String temperature;
 
 	public String getCityName() {
@@ -40,6 +46,7 @@ public class weather {
 	public void setTemperature(String temperature) {
 		this.temperature = temperature;
 	}
+
 	@Override
 	public String toString() {
 		return "Weather [City=" + cityName + ", Zip Code=" + zipCode
